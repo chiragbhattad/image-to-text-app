@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+}
+body {
+    background-color: #ADD8E6;
+}
+div {
+  border: 1px solid black;
+  margin-right: 190px;
+  margin-left: 190px;
+}
+</style>
+<head>
+    <title>Optical Character Recognition</title>
+</head>
+
+<h1 align="center" style="font-family:Fantasy;"> Optical Charcter Recognition </h1>
+
+<div>
+<p align="center" style="font-family:Monospace;"> Please upload your image: </p>
+
+<form action="{{ url_for('main') }}", method="POST">
+    <fieldset >
+	<input type="file" id="myFile" name="filename">
+	<br>
+	<input type="submit">
+    </fieldset>
+</form>
+<br>
+</div>
+
+<div class="result" align="center">
+	<br> Text detected:
+	<br>
+	<p style="font-size:15px">{{ result }}</p>
+</div>
+</html>
